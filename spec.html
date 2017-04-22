@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link type="text/css" rel="stylesheet" href="/assets/main.css">
+
+	</head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/translate">translate!</a></li>
+        
+          <li>
+            
+              <a href="/spec">en</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/es/spec">es</a>
+            
+          </li>
+        
+      </ul>
+    </nav>
+
+    <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="https://releases.mailbox.sexy">download</a></li>
+        <li><a href="/spec">spec</a></li>
+        <li><a href="/why">why!</a></li>
+      </ul>
+    </nav>
+    <h2 id="technical">Technical</h2>
+
+<ul>
+  <li>
+    <p>Each personal computer is its own email server sending and receiving personal
+emails from computer to computer.  There is no intermediaries!</p>
+  </li>
+  <li>
+    <p>SMTP network works on available software, tested by years of use: Tor, Postfix,
+dovecot, Thunderbird…</p>
+  </li>
+  <li>
+    <p>What we need is a secure transport, so we are going to make use of Tor. It
+provides secure transport, P2P addressing and authenticity of the recipient!
+The Tor network don’t know that it’s transmitting an email, neither who send
+or receive it, but the sender have the security that the email is received by
+the correct destination.</p>
+  </li>
+  <li>
+    <p>The SMTP server only sends and receive email, and retry if the other end is not
+available. Because this we use onion addresses that only works inside Tor
+network.</p>
+  </li>
+  <li>
+    <p>The whole system runs inside a <a href="https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">Systemd container</a>, it has an small footprint on the host systemd, and maintains it isolated.</p>
+  </li>
+</ul>
+
+
+--<br/>
+make email sexy again!
+
+  </body>
+</html>

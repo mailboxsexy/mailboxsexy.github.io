@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="es" prefix="og: http://ogp.me">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link type="text/css" rel="stylesheet" href="/es/assets/main.css">
+
+	</head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/es/translate">¡traduce!</a></li>
+        
+          <li>
+            
+              <a href="/">en</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/es/">es</a>
+            
+          </li>
+        
+      </ul>
+    </nav>
+
+    <nav>
+      <ul>
+        <li><a href="/">inicio</a></li>
+        <li><a href="https://releases.mailbox.sexy">descarga</a></li>
+        <li><a href="/es/spec">spec</a></li>
+        <li><a href="/es/why">¡por qué!</a></li>
+      </ul>
+    </nav>
+    <h1 id="mailboxsexy">mailbox.sexy</h1>
+
+<blockquote>
+  <p>Make e-mail sexy again!</p>
+</blockquote>
+
+<h2 id="descripción">Descripción</h2>
+
+<p>Mailbox.sexy es e-mail entre pares.  Es como un buzón dentro del sistema
+de correo, donde este llega directamente a tu casa, de forma anónima y
+sin intermediarios!</p>
+
+<p>Así es como debería ser el <em>email</em>.  Lo envías desde tu <code class="highlighter-rouge">~</code> y las demás
+lo reciben en el suyo.  No hay máquinas de terceros ni humanos
+interfiriendo en tus comunicaciones.</p>
+
+<h2 id="cómo-funciona">Cómo funciona</h2>
+
+<p>Mailbox.sexy aprovecha los <em>servicios ocultos</em> de la red
+<a href="https://torproject.org">Tor</a> para crear direcciones de correo únicas
+con el formato <code class="highlighter-rouge">mailbox@sarasa.onion</code>.  Al enviar un correo a esta
+dirección, mailbox.sexy despacha tu correo a través de Tor.</p>
+
+<p>Los nodos intermedios no sabrán su contenido, tampoco a quién se lo
+enviaste.  ¡Ni siquiera saben que estuviste enviando correo!</p>
+
+<p><a href="spec.html">Leer más</a></p>
+
+<h2 id="instalación">Instalación</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Trabajar como root</span>
+sudo bash
+<span class="c"># Descargar</span>
+wget https://releases.mailbox.sexy/mailbox.local.2017-03-25.x86_64.tar.xz<span class="o">{</span>,.sig<span class="o">}</span>
+<span class="c"># Verificar</span>
+gpg --verify mailbox.local.2017-03-25.x86_64.tar.xz.sig
+<span class="c"># Extraer</span>
+tar xvf mailbox.local.2017-03-25.x86_64.tar.xz
+<span class="c"># Instalar</span>
+<span class="nb">cd </span>mailbox.local.2017-03-25.x86_64
+make all
+<span class="c"># Hacer limpieza</span>
+<span class="nb">cd</span> ..
+rm -r mailbox.local.2017-03-25.x86_64.tar.xz<span class="k">*</span>
+</code></pre>
+</div>
+
+<p>Este proceso instala el contenedor de <em>mailbox.sexy</em> en
+<code class="highlighter-rouge">/var/lib/machines</code>.  A partir de esto momento, se lo puede manipular
+con <code class="highlighter-rouge">machinectl(1)</code> o <code class="highlighter-rouge">mailbox.sexy</code>.</p>
+
+<h2 id="configuración">Configuración</h2>
+
+<p>Si usas <a href="https://www.mozilla.org/es-ES/thunderbird/">Thunderbird</a>,
+agrega una nueva cuenta llamada <code class="highlighter-rouge">mailbox@mailbox.local</code>.  Esta siempre
+va a ser la dirección local y se convierte a
+<code class="highlighter-rouge">mailbox@hiddenservice.onion</code> al enviar correo.  Thunderbird
+autoconfigurará la cuenta.</p>
+
+<p>Si estás usando otro cliente que no soporta autoconfiguración, los datos
+son:</p>
+
+<ul>
+  <li>Usuaria: mailbox</li>
+  <li>Contraseña: la que indicaste durante la instalación</li>
+  <li>SMTP: mailbox.local:587 (STARTTLS)</li>
+  <li>IMAP: mailbox.local:993 (TLS)</li>
+  <li>POP3: mailbox.local:995 (TLS)</li>
+</ul>
+
+
+
+--<br/>
+make email sexy again!
+
+  </body>
+</html>

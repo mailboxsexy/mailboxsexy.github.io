@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link type="text/css" rel="stylesheet" href="/assets/main.css">
+
+	</head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/translate">translate!</a></li>
+        
+          <li>
+            
+              <a href="/why">en</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/es/why">es</a>
+            
+          </li>
+        
+      </ul>
+    </nav>
+
+    <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="https://releases.mailbox.sexy">download</a></li>
+        <li><a href="/spec">spec</a></li>
+        <li><a href="/why">why!</a></li>
+      </ul>
+    </nav>
+    <h2 id="why-not-use-">Why not use ×?</h2>
+
+<p>There’re lots of project that try to reinvent e-mail’s wheel, or replace
+with something else.  The issue is that they start with the user
+interfaces, thus discarding years of work without solving the real
+issue, the centralization of communication between people.  We don’t
+want to reinvent the wheel, we want something that works today.</p>
+
+<h2 id="hidden-services-are-difficult-to-read-and-remember">Hidden services are difficult to read and remember!</h2>
+
+<p>Until someone figures out Zooko’s triangle, this is what we have.  It
+could be worse, such as identities on
+<a href="https://github.com/agl/pond">Pond</a>, <a href="https://tox.chat/">Tox</a>, etc.  You
+can always use your addressbook to remember your friends’ identities.</p>
+
+<h2 id="why-on-a-container">Why on a container!</h2>
+
+<p>We could’ve distributed mailbox.sexy in a way where you’d run it on your
+prefered operating system, but we prefered to save ourselves some
+headaches by making the minimal amount of changes to the host, very
+probably incompatible between systems, so we standarized everything in a
+single operating system, running inside a container.  We chose
+<code class="highlighter-rouge">systemd-nspawn</code> because is a container management tool already
+available on most GNU/Linux distributions.</p>
+
+<h2 id="why-systemd-nspawn--systemd-is-shit">Why <code class="highlighter-rouge">systemd-nspawn</code>?  Systemd is shit!</h2>
+
+<p>You’re welcome to send patches to make mailbox.sexy work on any other
+container management tool :3</p>
+
+<h2 id="how-can-i-have-several-users-on-the-same-hiddenserviceonion">How can I have several users on the same hiddenservice.onion?</h2>
+
+<p>We’re still working on this, patches welcome!</p>
+
+
+--<br/>
+make email sexy again!
+
+  </body>
+</html>

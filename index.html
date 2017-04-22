@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link type="text/css" rel="stylesheet" href="/assets/main.css">
+
+	</head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/translate">translate!</a></li>
+        
+          <li>
+            
+              <a href="/">en</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/es/">es</a>
+            
+          </li>
+        
+      </ul>
+    </nav>
+
+    <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="https://releases.mailbox.sexy">download</a></li>
+        <li><a href="/spec">spec</a></li>
+        <li><a href="/why">why!</a></li>
+      </ul>
+    </nav>
+    <h1 id="mailboxsexy">mailbox.sexy</h1>
+
+<h2 id="description">Description</h2>
+
+<p>Mailbox.sexy is P2P e-mail.  It’s like a mailbox on the snail mail
+systemd, where mail gets delivered directly to your home, anonymously
+and without intermediaries!</p>
+
+<p>This is how e-mail should be.  You send it from your <code class="highlighter-rouge">~</code> and people
+receives it on theirs.  No third party machines nor humans meddling in
+your communications.</p>
+
+<h2 id="how-does-it-work">How does it work</h2>
+
+<p>Mailbox.sexy runs on <a href="https://torproject.org">Tor</a>’s <em>hidden services</em>,
+using addresses in the format <code class="highlighter-rouge">mailbox@anything.onion</code>.  When you send
+e-mail to such addresses, mailbox.sexy delivers them over Tor.</p>
+
+<p>Intermediate Tor nodes won’t know its contents, nor its recipients.
+They don’t even know you were sending e-mail!</p>
+
+<p><a href="spec.html">Read more</a></p>
+
+<h2 id="install">Install</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Work as root</span>
+sudo bash
+<span class="c"># Download</span>
+wget https://releases.mailbox.sexy/mailbox.local.2017-03-25.x86_64.tar.xz<span class="o">{</span>,.sig<span class="o">}</span>
+<span class="c"># Verify</span>
+gpg --verify mailbox.local.2017-03-25.x86_64.tar.xz.sig
+<span class="c"># Extract</span>
+tar xvf mailbox.local.2017-03-25.x86_64.tar.xz
+<span class="c"># Install</span>
+<span class="nb">cd </span>mailbox.local.2017-03-25.x86_64
+make all
+<span class="c"># Clean up</span>
+<span class="nb">cd</span> ..
+rm -r mailbox.local.2017-03-25.x86_64.tar.xz<span class="k">*</span>
+</code></pre>
+</div>
+
+<p>This process installs mailbox.sexy’s container on <code class="highlighter-rouge">/var/lib/machines</code>.
+From this moment on, you can manipulate it with <code class="highlighter-rouge">machinectl(1)</code> or
+<code class="highlighter-rouge">mailbox.sexy</code>.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>If you use <a href="https://www.mozilla.org/en-US/thunderbird/">Thunderbird</a>,
+add a new account called <code class="highlighter-rouge">mailbox@mailbox.local</code>.  This will be your
+local address, and gets converted to <code class="highlighter-rouge">mailbox@hiddenservice.onion</code> when
+you send e-mail.  Thunderbird will auto-configure this account.</p>
+
+<p>If you’re using another client that doesn’t support auto-configuration,
+the information you need is this:</p>
+
+<ul>
+  <li>Usuaria: mailbox</li>
+  <li>Contraseña: the one you selected</li>
+  <li>SMTP: mailbox.local:587 (STARTTLS)</li>
+  <li>IMAP: mailbox.local:993 (TLS)</li>
+  <li>POP3: mailbox.local:995 (TLS)</li>
+</ul>
+
+
+
+--<br/>
+make email sexy again!
+
+  </body>
+</html>
